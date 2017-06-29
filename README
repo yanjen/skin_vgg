@@ -1,0 +1,28 @@
+This is a research code for a student project.
+Project details can be found at: 
+
+Code Author: Yanjen Chen
+Project Corroborator: 
+
+This is a study based on AdaIN-style by Xuahuang:
+https://github.com/xunhuang1995/AdaIN-style.git
+
+Skin VGG network: (example)
+$ th skin_vgg.lua -ratio 0.7 -model vgg_normalised.t7
+
+Training: 
+Modify vgg loading part in train.lua
+///////////////////////////////////////////
+//vgg = torch.load('models/vgg_skin.lua')
+///////////////////////////////////////////
+$ th train.lua -contentDir <contentDir> -styleDir <styleDir>
+
+Testing: 
+Modify vgg part in test.lua
+///////////////////////////////////////////
+//vgg = torch.load(opt.vgg)
+//for i=#vgg,19,-1 do
+//    vgg:remove(i)
+//end
+///////////////////////////////////////////
+th train.lua -vgg models/vgg_skin.t7 -decoder <decoder> -content <content> -style <style>
