@@ -2,6 +2,7 @@ require 'nn'
 
 local cmd = torch.CmdLine()
 cmd:option('-ratio', 0.5, 'the ratio for skinning vgg network')
+cmd:option('-model', 'vgg.t7', 'The model you whsh to skin')
 opt = cmd:parse(arg)
 
 vgg = torch.load('vgg_normalised.t7')
@@ -49,5 +50,5 @@ function skin_vgg(model, ratio)
 	end
 end
 
-skin_vgg(vgg, opt.ratio)
+skin_vgg(opt.model, opt.ratio)
 torch.save('vgg_skin7.t7',vgg_skin)
