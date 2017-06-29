@@ -1,8 +1,9 @@
 This is a research code for a student project.
 Project details can be found at: 
+https://sites.google.com/view/gpu-style-transfer-main/
 
 Code Author: Yanjen Chen
-Project Corroborator: 
+Project Corroborator: Kevin Yang, Wei-Chien Liao
 
 This is a study based on AdaIN-style by Xuahuang:
 https://github.com/xunhuang1995/AdaIN-style.git
